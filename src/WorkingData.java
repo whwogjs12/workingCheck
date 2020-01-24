@@ -47,7 +47,7 @@ public class WorkingData {
 
     public void createPersonData(XSSFSheet sheet, int rowIndex)
     {
-        for(int x= 0;x<rowIndex;x++)
+        for(int x= 2;x<rowIndex;x++) // 앞 2개는 속성 데이터
         {
             XSSFRow xssfRow = sheet.getRow(x);
             if(xssfRow !=null)
@@ -68,10 +68,10 @@ public class WorkingData {
             if(cellData !=null)
             {
                 returnList.add(cellData);
-                //System.out.print(cellData+ "\t");
+                System.out.print(cellData+ "\t");
             }
         }
-        //System.out.println("");
+        System.out.println("");
         return returnList;
     }
 
@@ -97,13 +97,4 @@ public class WorkingData {
         return data;
     }
 
-    public Object [][] listToArray()
-    {
-        Object[][] array = new Object[list.size()][list.get(0).size()];
-        for(int x=1;x<list.size();x++)
-        {
-            array[x] = list.get(x).toArray();
-        }
-        return array;
-    }
 }
